@@ -1,13 +1,114 @@
+:root {
+  --main-color: #007bff;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.mainContainer {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Small */
+@media (min-width: 768px) {
+  .mainContainer {
+    width: 750px;
+  }
+}
+/* Medium */
+@media (min-width: 992px) {
+  .mainContainer {
+    width: 970px;
+  }
+}
+/* Large */
+@media (min-width: 1200px) {
+  .mainContainer {
+    width: 920px;
+  }
+}
+
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.mainContainer ul li {
+  list-style-type: none;
+  border-radius: 2px;
+  border-style: solid;
+  border-width: 3px;
+  border-color: var(--main-color);
+  margin: 10px;
+}
+
+.button {
+  border-style: solid;
+  border-color: var(--main-color);
+  border-radius: 5px;
+  background-color: white;
+  color: var(--main-color);
+}
+.autherAsk {
+  background-color: var(--main-color);
+  padding: 10px;
+  font-weight: bold;
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--main-color);
+  margin: -1px;
+}
+
+.question-info {
+  display: flex;
+  min-height: 150px;
+  margin: 10px;
+}
+.avatarBox {
+  width: 30%;
+  display: flex;
+}
+
+.avatarBox img {
+  margin: auto;
+  width: 100px;
+  height: 100px;
+  background-size: cover; /*this property does the magic*/
+  border-radius: 50%;
+}
+
+.answerBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 70%;
+  border-left: solid;
+  padding-left: 10px;
+  border-width: 1px;
+  border-color: var(--main-color);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar ul {
+  display: flex;
+  flex-direction: row;
 }
