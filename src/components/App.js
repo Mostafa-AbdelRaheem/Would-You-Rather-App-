@@ -8,6 +8,7 @@ import NavBar from './navBar'
 import Home from './home';
 import NewQuestion from './newQuestion';
 import QuestionStatus from './questionStatus';
+import Login from './login';
 
 
 
@@ -18,24 +19,23 @@ componentDidMount(){
 }
   render() { 
     return (
-      <BrowserRouter>
         <Fragment>
             <div className="mainContainer">
-              <NavBar/>      
+              {/* <NavBar/>       */}
               {this.props.loading === true
                   ? null
-                  : 
+                  :  
                     <Switch>
                     <Route path='/leaderboard' component ={LeaderBoard}/>
                     <Route path='/newquestion' component ={NewQuestion}/>
                     <Route path='/unanswered_questions' component ={QuestionStatus}/>
                     <Route path='/answered_questions' component ={QuestionStatus}/>
-                    <Route path='/' component ={Home}/>
+                    <Route path='/home' component ={Home}/>
+                    <Route path='/' component ={Login}/>
                     </Switch>
                   }
             </div>
         </Fragment>
-      </BrowserRouter>
     )
   }
 }

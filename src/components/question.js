@@ -6,10 +6,9 @@ import { formatQuestion } from '../utils/helpers';
 
 class Question extends React.Component {
     render() { 
-        // console.log(this.props)
+        console.log("the question state",this.props)
         const question = this.props.question
         // console.log(question)
-        console.log(question)
         const {
             name,id,timestamp,optionOne,optionTwo,avatar} = question
         return <div className='question'>
