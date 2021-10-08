@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import Question from './question';
 import QuestionStatus from './questionStatus';
 import NavBar from './navBar';
+import { formatDate } from './../utils/helpers';
+import AnsweredQuestion from './answeredQuestions';
 
 class Home extends React.Component {
     
@@ -22,10 +24,23 @@ class Home extends React.Component {
         </div>;
     }
 }
-function mapStateToProps({questions}){
+// function mapStateToProps({questions}){
+//     return{
+//         questionIds:Object.keys(questions).sort((a,b) => questions[b].timestamp-questions[a].timestamp)
+//     }
+// }
+ 
+
+function mapStateToProps({authedUser,questions}){
+    // Object.keys(questions).map((question)=>console.log("each",question));
+    // console.log("recieved",Object.keys(questions).map((question)=>console.log(questions)));
     return{
-        questionIds:Object.keys(questions).sort((a,b) => questions[b].timestamp-questions[a].timestamp)
+        questionIds:Object.keys(questions).sort((a,b) => questions[b].timestamp-questions[a].timestamp),
+        // answeredQuestion:,
+        // unAnsweredQuestion:
     }
 }
- 
+
+
+
 export default connect(mapStateToProps)(Home);
