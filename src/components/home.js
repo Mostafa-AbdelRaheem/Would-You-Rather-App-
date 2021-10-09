@@ -5,22 +5,26 @@ import QuestionStatus from './questionStatus';
 import NavBar from './navBar';
 import { formatDate } from './../utils/helpers';
 import AnsweredQuestion from './answeredQuestions';
+import QuestionContainer from './questionContainer'
 
 class Home extends React.Component {
     
     render() {
+        console.log("Home page",this.props.questions)
         return <div className="homeContainer">
             <NavBar/>
             <h3 className='text-center'>Questions</h3>
             <QuestionStatus/>
-            <ul className='home-list' >
+            <QuestionContainer />
+            {/* <ul className='home-list' >
+                
                 {this.props.questionIds.map((id)=>(
                 <li   key={id}>
-                   <Question id ={id}/> 
+                   <QuestionContainer id ={id}/> 
                 </li>
                         
                 ))}
-            </ul>
+            </ul> */}
         </div>;
     }
 }
@@ -35,6 +39,7 @@ function mapStateToProps({authedUser,questions}){
     // Object.keys(questions).map((question)=>console.log("each",question));
     // console.log("recieved",Object.keys(questions).map((question)=>console.log(questions)));
     return{
+        questions,
         questionIds:Object.keys(questions).sort((a,b) => questions[b].timestamp-questions[a].timestamp),
         // answeredQuestion:,
         // unAnsweredQuestion:
