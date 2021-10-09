@@ -1,8 +1,11 @@
 import React from 'react'
 import {NavLink} from 'react-router-dom'
+import { connect } from 'react-redux';
 
-export default function NavBar ()  {
-    return (
+class NavBar extends React.Component {
+    render() { 
+        console.log("nave props",this.props)
+        return (
         <nav className="navbar">
             <ul>
                 <li>
@@ -17,8 +20,26 @@ export default function NavBar ()  {
                 <li>
                     <NavLink to="/"  activeClassName='active'>Login</NavLink>
                 </li>
+                <li>
+                    Logged User: {this.props.authedUser}
+                </li>
+
             </ul>
         </nav> 
-     );
+
+        );
+    }
+
+    
+    
 }
+function mapStateToProps({authedUser,users}){
+
+    return{
+        authedUser,
+        users
+    }
+}
+ 
+export default connect(mapStateToProps)(NavBar);
  

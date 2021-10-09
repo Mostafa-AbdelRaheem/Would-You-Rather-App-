@@ -9,64 +9,25 @@ import AnsweredQuestion from './answeredQuestions';
 class Question extends React.Component {
 
     render() { 
-        const question = this.props.question
-        const authedUser = this.props.authedUser
-        const {name,id,timestamp,optionOne,optionTwo,avatar} = question
-        const optionOneVotes = optionOne.votes
-        const optionTwoVotes = optionTwo.votes
-        console.log("the question to be passed",this.props.authedUser)
+        // console.log("question passed props",this.props)
         return (
         <div className='question'>
-
-        {
-            (optionOneVotes.includes(authedUser)||optionTwoVotes.includes(authedUser)) ? 
-            // (<AnsweredQuestion question ={question}/>
-             <h3>AnsweredQuestion</h3>: <h3>UnAnsweredQuestion</h3>
-        }
-            <div className="autherAsk">{name} asks:</div>
+            <div className="autherAsk">{this.props.question.name} asks:</div>
             <div className='question-info'>
                 <div className="avatarBox">
-                    <img src={avatar} alt={`Avatar of ${name}`} className="avatar"/>
+                    <img src={this.props.question.avatar} alt={`Avatar of ${this.props.question.name}`} className="avatar"/>
                 </div>
                 <div className="answerBox">
                     <h3>Would you rather</h3>
-                    <p>play football</p>
+
+                    <p><span>...</span>{this.props.question.optionOne.votes !== 0? this.props.question.optionOne.text: this.props.question.optionTwo.text}<span>...</span></p>
 
                     <button className="button">View Pull</button>
                 </div>
             </div>
-            {/* <AnsweredQuestion question ={question}/> */}
         </div>
         );
     }
 }
- 
 
-function mapStateToProps({authedUser,users,questions},{id}){
-    const question =questions[id]
-    const formated_question = formatQuestion(question, users[question.author])
-    const optionOneVotes = formated_question.optionOne.votes
-    const optionTwoVotes = formated_question.optionTwo.votes
-    return{
-        authedUser,
-        question:formated_question
-    
-    }
-    // if (optionOneVotes.includes(authedUser) || optionTwoVotes.includes(authedUser)){
-    //     const answered = formated_question
-    //     console.log("answered",answered);
-
-    // }else{
-    //     const unAnswered = formated_question
-    //     console.log("unAnswered",unAnswered);
-
-    //     return{
-    //         authedUser,
-    //         question:unAnswered
-        
-    //     }
-    // }
-
-}
-
-export default connect(mapStateToProps)(Question);
+export default Question;

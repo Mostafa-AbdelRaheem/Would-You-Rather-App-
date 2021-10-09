@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
+import NavBar from './navBar';
+
+
 
 class LeaderBoard extends React.Component {
     render() { 
-        return <div>LeaderBoard</div>;
+        return <div className="homeContainer">
+        <NavBar/>
+
+    </div>;;
     }
 }
  

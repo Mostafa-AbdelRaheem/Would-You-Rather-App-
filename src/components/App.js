@@ -28,8 +28,6 @@ componentDidMount(){
                     <Switch>
                     <Route path='/leaderboard' component ={LeaderBoard}/>
                     <Route path='/newquestion' component ={NewQuestion}/>
-                    <Route path='/unanswered_questions' component ={QuestionStatus}/>
-                    <Route path='/answered_questions' component ={QuestionStatus}/>
                     <Route path='/home' component ={Home}/>
                     <Route path='/' component ={Login}/>
                     </Switch>

@@ -4,7 +4,7 @@ import { receivedUsers } from "./users";
 import { setAuthedUser } from '../actions/authedUser'
 
 
-const AUTHED_ID = 'tylermcginnis'
+const AUTHED_ID = 'homersimpsons'
 
 export function handleInitialData () {
   return (dispatch) => {
