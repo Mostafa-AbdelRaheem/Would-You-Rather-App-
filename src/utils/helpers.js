@@ -37,3 +37,20 @@
       avatar: avatarURL,
       }
     }
+
+
+    export function formatuser (user) {
+      const { id,name,avatarURL,answers,questions } = user
+      const answersScore = Object.keys(answers).length
+      const totalScore = (answersScore+questions.length)
+    
+      return {
+        id,
+        name,
+        answersScore,
+        questionsScore:questions.length,
+        totalScore,
+        avatar: avatarURL 
+
+        }
+      }

@@ -12,18 +12,14 @@ class QuestionContainer extends React.Component {
 
     handleAnswered = ()=>{
         this.setState({displayedAnswers:this.props.answeredQuestions})
-        return <ul >{this.state.displayedAnswers.map((question)=>(<li key={question.id}>{question} </li>))}</ul>
     }
 
     handleUnanswered = ()=>{
         this.setState({displayedAnswers:this.props.unansweredQuestions})
-        return <ul >{this.state.displayedAnswers.map((question)=>(<li key={question.id}>{question} </li>))}</ul>
     }
 
     render() { 
-        // this.props.answeredQuestions.map((question)=>{console.log(question.id)})
-        // console.log("Container props",this.props.answeredQuestions)
-        // console.log("Container state",this.state)
+
         return (
             <div className='question'>
                 <button type="button" className="btn btn-primary m-1" onClick = {this.handleAnswered} >Answered Questions</button>

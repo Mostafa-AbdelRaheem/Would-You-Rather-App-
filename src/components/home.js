@@ -1,15 +1,23 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import QuestionStatus from './questionStatus';
 import NavBar from './navBar';
 import QuestionContainer from './questionContainer'
+import Login from './login';
+
+
 
 class Home extends React.Component {
+    
+    handlelogin = ()=>{
+        console.log("authurzaition ",this.props.authedUser)
+    }
     
     render() {
         console.log("Home page",this.props)
         return <div className="homeContainer">
+            {this.props.authedUser===null &&<Login/>}
             <NavBar/>
+            {this.handlelogin()}
             <h3 className='text-center'>Questions</h3>
             <QuestionContainer />
         </div>;

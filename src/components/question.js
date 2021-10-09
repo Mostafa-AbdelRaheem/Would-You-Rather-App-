@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { formatQuestion } from '../utils/helpers';
-// import authedUser from '../reducers/authedUser';
-// import users from '../reducers/users';
+
 import logger from './../middleware/logger';
-import AnsweredQuestion from './answeredQuestions';
 
 class Question extends React.Component {
 
     render() { 
-        // console.log("question passed props",this.props)
         return (
         <div className='question'>
             <div className="autherAsk">{this.props.question.name} asks:</div>
