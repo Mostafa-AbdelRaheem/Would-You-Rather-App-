@@ -18,7 +18,7 @@ class Home extends React.Component {
             {this.props.authedUser===null &&<Login/>}
             <NavBar/>
             {this.handlelogin()}
-            <h3 className='text-center'>Questions</h3>
+            <h2 className='text-center'>Questions</h2>
             <QuestionContainer />
         </div>;
     }

@@ -6,19 +6,22 @@ class LeaderBoardCard extends React.Component {
         return (
         <div className='card'>
 
-        <div className="autherAsk">{this.props.user.name}</div>
-        <div className='question-info'>
+        <div className="userName">{this.props.user.name}</div>
+        <div className='cardInfo'>
             <div className="avatarBox">
                 <img src={this.props.user.avatar} alt={`Avatar of ${this.props.user.name}`} className="avatar"/>
             </div>
-            <div className="answerBox">
+            <div className="resultBox">
                 <p>Answered Qeustions:<span style={{fontWeight:500}}>{this.props.user.answersScore}</span></p>
                 <p>Created Qeustions:<span style={{fontWeight:500}}>{this.props.user.questionsScore}</span></p>
 
             </div>
             <div className="scoreBox">
                 <h3>Score</h3>
-                <div>{this.props.user.totalScore}</div>
+                <div className="scoreBackground">
+                <div className="scoreNumber">{this.props.user.totalScore}</div>
+                </div>
+                
             </div>
         </div>
     </div>);

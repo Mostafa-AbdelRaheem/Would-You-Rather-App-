@@ -51,6 +51,17 @@ code {
   display: flex;
   justify-content: center;
 }
+.navbar .navBarList li {
+  border-style: none;
+  border-style: solid;
+  border-width: 2px;
+  border-color: transparent;
+  margin: 10px;
+  text-decoration: none;
+}
+.navbar ul .active {
+  /* background-color: var(--main-color); */
+}
 /* Start Home page */
 
 .mainContainer {
@@ -61,9 +72,8 @@ code {
 
 .mainContainer ul li {
   list-style-type: none;
-  border-radius: 2px;
   border-style: solid;
-  border-width: 3px;
+  border-width: 2px;
   border-color: var(--main-color);
   margin: 10px;
 }
@@ -176,3 +186,78 @@ code {
   color: white;
 }
 /* End login page */
+/* Leader Board Start */
+
+.userName {
+  background-color: var(--main-color);
+  padding: 10px;
+  font-weight: bold;
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--main-color);
+  margin: -1px;
+}
+
+.cardInfo {
+  display: flex;
+  min-height: 150px;
+  margin: 10px;
+}
+.avatarBox {
+  width: 30%;
+  display: flex;
+}
+
+.avatarBox img {
+  margin: auto;
+  width: 100px;
+  height: 100px;
+  background-size: cover; /*this property does the magic*/
+  border-radius: 50%;
+}
+
+.resultBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 50%;
+  border-left: solid;
+  padding-left: 10px;
+  border-width: 1px;
+  border-color: var(--main-color);
+}
+
+.resultBox p {
+  font-size: 18px;
+  text-align: center;
+}
+
+.scoreBox {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  border-left: solid;
+  padding-left: 10px;
+  border-width: 1px;
+  border-color: var(--main-color);
+}
+.scoreBox h3 {
+  text-align: center;
+}
+
+.scoreBox .scoreBackground {
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  font-size: 32px;
+  background-color: var(--main-color);
+  width: 50%;
+  height: 52%;
+  border-radius: 50px;
+  margin: auto;
+}
+.scoreBox .scoreBackground .scoreNumber {
+  padding-top: 12%;
+}
+
+/* LeaderBoard End */

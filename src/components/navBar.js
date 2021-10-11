@@ -7,7 +7,7 @@ class NavBar extends React.Component {
         console.log("nave props",this.props)
         return (
         <nav className="navbar">
-            <ul>
+            <ul className="navBarList">
                 <li>
                     <NavLink to="/home" exact activeClassName='active'>Home</NavLink>
                 </li>

@@ -11,8 +11,8 @@ class LeaderBoardContainer extends React.Component {
         console.log("container props",this.props)
         return (
         <div>
-            <h1>LeaderBoard</h1>
-            {this.props.sortedUserInfoList.map((user)=>(<u><li key ={user.id}><LeaderBoardCard user={user}/></li></u>))}
+            <h2 className='text-center'>Leader Board</h2>
+            {this.props.sortedUserInfoList.map((user)=>(<ul><li key ={user.id}><LeaderBoardCard user={user}/></li></ul>))}
         </div>)
     }
 }

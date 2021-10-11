@@ -29,7 +29,9 @@ componentDidMount(){
                     <Route path='/leaderboard' component ={LeaderBoard}/>
                     <Route path='/newquestion' component ={NewQuestion}/>
                     <Route path='/home' component ={Home}/>
-                    <Route path='/' component ={Login}/>
+                    {/* <Route path='/not-found' component ={NotFound}/> */}
+                    <Route path='/'  component ={Login}/>
+                    {/* <Redirect to="/not-found"/> */}
                     </Switch>
                   }
             </div>
