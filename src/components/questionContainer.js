@@ -22,8 +22,8 @@ class QuestionContainer extends React.Component {
 
         return (
             <div className='question'>
-                <button type="button" className="btn btn-primary m-1" onClick = {this.handleAnswered} >Answered Questions</button>
                 <button type="button" className="btn btn-primary" onClick={this.handleUnanswered}>UnAnswered Questions</button>
+                <button type="button" className="btn btn-primary m-1" onClick = {this.handleAnswered} >Answered Questions</button>
                 {this.state.displayedAnswers.length ===0 && <ul>{this.props.unansweredQuestions.map((question)=>(<li key={question.id}><Question question={question}/></li>))}</ul>}
                 <ul>{this.state.displayedAnswers.map((question)=>(<li key={question.id}><Question question={question}/></li>))}</ul>
             </div>

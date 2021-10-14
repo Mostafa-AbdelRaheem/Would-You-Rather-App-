@@ -261,3 +261,38 @@ code {
 }
 
 /* LeaderBoard End */
+/* Start newQuestionContainer */
+.newQuestionContainer {
+  display: flex;
+  flex-direction: column;
+  border-style: solid;
+  border-color: var(--main-color);
+}
+
+.newQuestionContainer h3 {
+  background-color: var(--main-color);
+  width: 100%;
+  text-align: center;
+}
+
+.newQuestionContainer h4 {
+  padding-left: 5px;
+}
+
+.newQuestionContainer .newQesution {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 250px;
+}
+
+.newQuestionContainer p {
+  padding-left: 5px;
+  margin: 0;
+}
+
+.newQuestionContainer .textArea {
+  margin: 10px;
+}
+
+/* End newQuestionContainer */
