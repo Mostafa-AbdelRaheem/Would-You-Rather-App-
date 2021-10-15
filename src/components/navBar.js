@@ -18,7 +18,7 @@ class NavBar extends React.Component {
                     <NavLink to="/leaderboard"  activeClassName='active'>Leader Board</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/"  activeClassName='active'>Login</NavLink>
+                    <NavLink to="/"  activeClassName='active'>Logout</NavLink>
                 </li>
                 <li>
                     Logged User: {this.props.authedUser}

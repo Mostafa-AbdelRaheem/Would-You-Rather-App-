@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { handleAddQuestionAnswer } from '../actions/questions';
 
 
 class PullQuestion extends React.Component {
@@ -14,21 +16,34 @@ class PullQuestion extends React.Component {
 
     handleSubmit = (e)=>{
         e.preventDefault()
+        const {dispatch ,authedUser, question} =this.props
+        const qid = question.id
+        let answer=""
 
-        // const{optionOneText,optionTwoText} =this.state
-        // const {dispatch} = this.props
-        
-        // dispatch(handleAddQuestion(this.state))
-
-        // this.setState(()=>({
-        //     optionOneText:'',
-        //     optionTwoText:'',
+        if(this.state.value === this.props.question.optionOne.text){
+            answer = "optionOne"
+            console.log("first conidtion called")
+            console.log("answer",answer)
+            
+        }else{
+            answer = "optionTwo"
+            console.log("else conidtion called")
+            console.log("answer",answer)
         }
+        console.log("button clicked")
+        // this.state.value === this.props.question.optionOne.text
+        // const{optionOneText,optionTwoText} =this.state
+        console.log("authedUser",authedUser)
+        dispatch(handleAddQuestionAnswer({authedUser,qid,answer}))
 
-
+        }
+        // questions[qid][answer].votes
 
     render() { 
-        console.log("PULL",this.props)
+        console.log("PULL props",this.props)
+        const  qid =this.props.question.id
+        console.log("PULL props questions",this.props.questions[qid]["optionTwo"].votes)
+        console.log("PULL state",this.state.value)
         console.log("optionOne",this.props.question.optionOne.text)
         console.log("optionTwo",this.props.question.optionTwo.text)
         return (
@@ -65,7 +80,15 @@ class PullQuestion extends React.Component {
         );
     }
 }
+function mapStateToProps({authedUser,users,questions}){
+
+    return{
+        authedUser,
+        users,
+        questions,
+    }
+    }
 
  
-export default PullQuestion;
+export default connect(mapStateToProps)(PullQuestion);
 

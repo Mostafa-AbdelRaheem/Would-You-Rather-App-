@@ -5,8 +5,6 @@ import { pullScore } from './../utils/helpers';
 class PullResult extends React.Component {
     render() { 
         const {optionOneLength,optionTwoLength,optionOneScore,optionTwoScore}= pullScore(this.props.question)
-        // console.log("PullResult",this.props.question.optionOne.text)
-        // console.log("optionOneScore",optionOneScore)
         return (
             <div className='question'>
                 <div className="autherAsk">Asked by {this.props.name}:</div>
