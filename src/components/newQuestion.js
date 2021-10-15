@@ -46,19 +46,11 @@ class NewQuestion extends React.Component {
             optionTwoText:'',
             toHome:true
         }))
-
-        
-        console.log("optionOneText",optionOneText)
-        console.log("optionTwoText",optionTwoText)
-
-
     }
 
-
     render() { 
-
         if(this.state.toHome===true){
-            return <Redirect to='/home'/>
+            return <Redirect to='/'/>
         }
 
         return (
@@ -97,13 +89,11 @@ class NewQuestion extends React.Component {
 }
 
 function mapStateToProps({authedUser,users,questions}){
-
     return{
         authedUser,
         users,
         questions,
     }
-    }
+}
 
- 
 export default connect(mapStateToProps)(NewQuestion);

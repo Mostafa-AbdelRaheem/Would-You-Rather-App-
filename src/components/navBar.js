@@ -4,12 +4,11 @@ import { connect } from 'react-redux';
 
 class NavBar extends React.Component {
     render() { 
-        console.log("nave props",this.props)
         return (
         <nav className="navbar">
             <ul className="navBarList">
                 <li>
-                    <NavLink to="/home" exact activeClassName='active'>Home</NavLink>
+                    <NavLink to="/" exact activeClassName='active'>Home</NavLink>
                 </li>
                 <li>
                     <NavLink to="/newquestion"  activeClassName='active'>New Question</NavLink>
@@ -18,7 +17,7 @@ class NavBar extends React.Component {
                     <NavLink to="/leaderboard"  activeClassName='active'>Leader Board</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/"  activeClassName='active'>Logout</NavLink>
+                    <NavLink to="/logout"  activeClassName='active'>Logout</NavLink>
                 </li>
                 <li>
                     Logged User: {this.props.authedUser}

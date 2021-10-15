@@ -4,24 +4,13 @@ import { formatQuestion } from '../utils/helpers';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router';
 
-import logger from './../middleware/logger';
-
 class Question extends React.Component {
-
-
-
     toParent=(e,id)=>{
         e.preventDefault()
-        console.log("toParent Pull")
         this.props.history.push(`/question/${id}`)
-    // we need withRouter from react-router-dom
-    // then export default withRouter(connect(maptopstate)(Question)) 
-
     }
-    
 
     render() { 
-        console.log("inQuestions",this.props)
         return (
         <div className='question'>
             <div className="autherAsk">{this.props.question.name} asks:</div>
@@ -42,5 +31,4 @@ class Question extends React.Component {
     }
 }
 
-// export default Question;
 export default withRouter(Question);

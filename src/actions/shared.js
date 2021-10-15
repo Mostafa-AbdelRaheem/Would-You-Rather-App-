@@ -4,7 +4,7 @@ import { receivedUsers } from "./users";
 import { setAuthedUser } from '../actions/authedUser'
 
 
-const AUTHED_ID = 'homersimpsons'
+const AUTHED_ID = null
 
 export function handleInitialData () {
   return (dispatch) => {
@@ -12,7 +12,7 @@ export function handleInitialData () {
       .then(({ users, questions }) => {
         dispatch(receivedUsers(users))
         dispatch(receivedQuestions(questions))
-        dispatch(setAuthedUser(AUTHED_ID))
+        // dispatch(setAuthedUser(AUTHED_ID))
       })
   }
 } 

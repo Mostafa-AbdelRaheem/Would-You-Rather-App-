@@ -13,6 +13,7 @@ import Login from './login';
 
 
 
+
 class App extends React.Component {
 
 componentDidMount(){
@@ -22,20 +23,20 @@ componentDidMount(){
     return (
         <Fragment>
             <div className="mainContainer">
-              {/* <NavBar/>       */}
-              {this.props.loading === true
-                  ? null
+            {this.props.authedUser === null
+                  ? <Login/>
                   :  
                     <Switch>
                     <Route path='/leaderboard' component ={LeaderBoard}/>
                     <Route path='/newquestion' component ={NewQuestion}/>
                     <Route path='/question/:id' component ={QuestionPage}/>
-                    <Route path='/home' component ={Home}/>
                     {/* <Route path='/not-found' component ={NotFound}/> */}
-                    <Route path='/'  component ={Login}/>
+                    <Route path='/logout'  component ={Login}/>
+                    <Route path='/'  component ={Home}/>
                     {/* <Redirect to="/not-found"/> */}
                     </Switch>
-                  }
+            }
+                  
             </div>
         </Fragment>
     )
@@ -43,8 +44,7 @@ componentDidMount(){
 }
 function mapStateToProps ({ authedUser }) {
   return {
-    // this to make page loading till the data rendered
-    loading: authedUser === null
+    authedUser
   }
 }
 

@@ -5,18 +5,17 @@ import { formatuser } from '../utils/helpers';
 
 
 class LeaderBoardContainer extends React.Component {
-
-
     render() { 
-        console.log("container props",this.props)
+        const {sortedUserInfoList} = this.props
+        const output = sortedUserInfoList.map((user)=>(console.log("user",user.id)))
+        console.log("sortedUserInfoList",sortedUserInfoList.length)
         return (
         <div>
             <h2 className='text-center'>Leader Board</h2>
-            {this.props.sortedUserInfoList.map((user)=>(<ul><li key ={user.id}><LeaderBoardCard user={user}/></li></ul>))}
+            {this.props.sortedUserInfoList.map((user)=>(<ul><li key={user.id}><LeaderBoardCard user={user}/></li></ul>))}
         </div>)
     }
 }
-
 
 const  compare = (a,b)=> {
     console.log("a",a);
@@ -25,11 +24,8 @@ const  compare = (a,b)=> {
 
 function mapStateToProps({authedUser,users,questions}){
     const  usersId =Object.keys(users)
+    console.log("usersId",usersId)
     const userInfoList=[]
-
-    // usersId.forEach(id => {
-    //     userInfoList.push(formatuser(users[id]))
-    // });
 
     console.log("users",users)
     usersId.forEach(user => {
@@ -37,7 +33,7 @@ function mapStateToProps({authedUser,users,questions}){
         });
     console.log("userInfoList",userInfoList)
     const sortedUserInfoList = [...userInfoList].sort( (a,b)=> compare(a,b))
-    console.log("sortedUserInfoList",sortedUserInfoList)
+    // console.log("sortedUserInfoList",sortedUserInfoList)
 
     return{
         authedUser,
