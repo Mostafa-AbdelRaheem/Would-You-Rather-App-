@@ -8,6 +8,7 @@ import NavBar from './navBar'
 import Home from './home';
 import NewQuestion from './newQuestion';
 import QuestionStatus from './questionStatus';
+import QuestionPage from './questionPage';
 import Login from './login';
 
 
@@ -28,6 +29,7 @@ componentDidMount(){
                     <Switch>
                     <Route path='/leaderboard' component ={LeaderBoard}/>
                     <Route path='/newquestion' component ={NewQuestion}/>
+                    <Route path='/question/:id' component ={QuestionPage}/>
                     <Route path='/home' component ={Home}/>
                     {/* <Route path='/not-found' component ={NotFound}/> */}
                     <Route path='/'  component ={Login}/>

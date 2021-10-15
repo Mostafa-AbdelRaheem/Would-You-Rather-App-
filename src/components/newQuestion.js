@@ -3,14 +3,15 @@ import NavBar from './navBar';
 import { connect } from 'react-redux';
 import { handleAddQuestion } from '../actions/questions';
 import authedUser from './../reducers/authedUser';
-
+import { Redirect } from 'react-router-dom';
 
 class NewQuestion extends React.Component {
 
     state={
         optionOneText:'',
         optionTwoText:'',
-        author:''
+        author:'',
+        toHome:false
     
     }
 
@@ -43,22 +44,22 @@ class NewQuestion extends React.Component {
         this.setState(()=>({
             optionOneText:'',
             optionTwoText:'',
+            toHome:true
         }))
+
         
-        // console.log("this.props.authedUser",this.props.authedUser)
-        // authedUser
-
-
         console.log("optionOneText",optionOneText)
         console.log("optionTwoText",optionTwoText)
-        // console.log("this.props",this.props)
-        
-        // todo:add to store
+
 
     }
 
 
     render() { 
+
+        if(this.state.toHome===true){
+            return <Redirect to='/home'/>
+        }
 
         return (
         <div >

@@ -1,12 +1,27 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { formatQuestion } from '../utils/helpers';
+import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router';
 
 import logger from './../middleware/logger';
 
 class Question extends React.Component {
 
+
+
+    toParent=(e,id)=>{
+        e.preventDefault()
+        console.log("toParent Pull")
+        this.props.history.push(`/question/${id}`)
+    // we need withRouter from react-router-dom
+    // then export default withRouter(connect(maptopstate)(Question)) 
+
+    }
+    
+
     render() { 
+        console.log("inQuestions",this.props)
         return (
         <div className='question'>
             <div className="autherAsk">{this.props.question.name} asks:</div>
@@ -19,7 +34,7 @@ class Question extends React.Component {
 
                     <p><span>...</span>{this.props.question.optionOne.votes !== 0? this.props.question.optionOne.text: this.props.question.optionTwo.text}<span>...</span></p>
 
-                    <button className="button">View Pull</button>
+                    <button className="button" onClick={(e)=>this.toParent(e,this.props.question.id)}>View Pull</button>
                 </div>
             </div>
         </div>
@@ -27,4 +42,5 @@ class Question extends React.Component {
     }
 }
 
-export default Question;
+// export default Question;
+export default withRouter(Question);
