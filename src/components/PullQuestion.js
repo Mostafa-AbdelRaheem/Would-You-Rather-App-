@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 
-class Pull extends React.Component {
+class PullQuestion extends React.Component {
     state={
         value:'',
 
@@ -67,5 +67,5 @@ class Pull extends React.Component {
 }
 
  
-export default Pull;
+export default PullQuestion;
 
