@@ -10,12 +10,6 @@ class NavBar extends React.Component {
         tologin:false
     }
 
-    // handlelogin = (e) =>{
-    //     const value = e.target.value
-    //     this.setState(()=>({
-    //         value
-    //     }))
-    // }
 
     handleLogout = (e)=>{
         e.preventDefault()
@@ -27,7 +21,6 @@ class NavBar extends React.Component {
     }
 
     render() { 
-        console.log("value",this.state.value)
         if(this.state.tologin===true){
             return <Redirect to='//logout'/>
         }
@@ -60,15 +53,10 @@ class NavBar extends React.Component {
                     </div>
                 </div>
             </div>
-                 
-    
-
         );
     }
-
-    
-    
 }
+
 function mapStateToProps({authedUser,users}){
 
     return{

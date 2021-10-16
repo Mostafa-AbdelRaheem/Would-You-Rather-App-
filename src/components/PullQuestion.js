@@ -13,7 +13,6 @@ class PullQuestion extends React.Component {
         this.setState({value:e.target.value})
     }
 
-
     handleSubmit = (e)=>{
         e.preventDefault()
         const {dispatch ,authedUser, question} =this.props
@@ -22,8 +21,7 @@ class PullQuestion extends React.Component {
         let answer=""
 
         if(this.state.value === this.props.question.optionOne.text){
-            answer = "optionOne"
-            
+            answer = "optionOne"       
         }else{
             answer = "optionTwo"
             
@@ -32,15 +30,10 @@ class PullQuestion extends React.Component {
         dispatch(addAnswerToUser({authedUser, qid, answer,qauthor}))
 
         }
-        // questions[qid][answer].votes
+
 
     render() { 
-        console.log("PULL props",this.props)
         const  qid =this.props.question.id
-        console.log("PULL props questions",this.props.questions[qid].author)
-        console.log("PULL state",this.state.value)
-        console.log("optionOne",this.props.question.optionOne.text)
-        console.log("optionTwo",this.props.question.optionTwo.text)
         return (
             <div className='question'>
                 <div className="autherAsk">{this.props.name} asks:</div>

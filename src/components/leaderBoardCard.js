@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 class LeaderBoardCard extends React.Component {
     render() { 
-        console.log("LeaderBoard card",this.props)
         return (
         <div className='card'>
 
@@ -28,7 +27,5 @@ class LeaderBoardCard extends React.Component {
     }
 }
  
-
-
     
 export default LeaderBoardCard;

@@ -334,7 +334,7 @@ code {
 .optionBox {
   display: flex;
   flex-direction: column;
-  height: 120px;
+  height: 155px;
   justify-content: space-around;
   border-style: solid;
   border-width: 2px;
@@ -344,6 +344,16 @@ code {
   background-color: rgb(0 0 255 / 10%);
   margin: 5px;
   padding: 5px;
+}
+#yourVote {
+  text-align: center;
+  margin: 0 auto;
+  width: 25%;
+  border-radius: 5px;
+  font-weight: bold;
+  background-color: var(--main-color);
+  border-color: white;
+  color: white;
 }
 
 /* End Pull Page */

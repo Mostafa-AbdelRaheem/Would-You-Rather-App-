@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect, Provider } from 'react-redux';
 import NavBar from './navBar';
 import QuestionContainer from './questionContainer'
-import Login from './login';
+
 
 
 
@@ -10,7 +10,6 @@ class Home extends React.Component {
     
     render() {
         return <div className="homeContainer">
-            {/* {this.handlelogin()} */}
             <NavBar/>
                     <h2 className='text-center'>Questions</h2>
                     <QuestionContainer />
@@ -26,7 +25,5 @@ function mapStateToProps({authedUser,questions}){
         questionIds:Object.keys(questions).sort((a,b) => questions[b].timestamp-questions[a].timestamp),
     }
 }
-
-
 
 export default connect(mapStateToProps)(Home);

@@ -2,31 +2,25 @@ import React, { Component } from 'react';
 import NavBar from './navBar';
 import { connect } from 'react-redux';
 import { handleAddQuestion } from '../actions/shared';
-import authedUser from './../reducers/authedUser';
 import { Redirect } from 'react-router-dom';
 
 class NewQuestion extends React.Component {
-
     state={
         optionOneText:'',
         optionTwoText:'',
         author:'',
         toHome:false
-    
     }
 
     handleOptionOne = (e) =>{
         const optionOneText = e.target.value
-
         this.setState(()=>({
             optionOneText
         }))
     }
 
-
     handleOptionTwo= (e) =>{
         const optionTwoText = e.target.value
-
         this.setState(()=>({
             optionTwoText,
             author:this.props.authedUser
@@ -35,12 +29,9 @@ class NewQuestion extends React.Component {
 
     handleSubmit = (e)=>{
         e.preventDefault()
-
         const{optionOneText,optionTwoText} =this.state
         const {dispatch} = this.props
-        
         dispatch(handleAddQuestion(this.state))
-
         this.setState(()=>({
             optionOneText:'',
             optionTwoText:'',

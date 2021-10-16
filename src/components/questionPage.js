@@ -8,15 +8,19 @@ import PullResult from './PullResult';
 class QuestionPage extends React.Component {
 
     handleAnsweredQuestion=()=>{
-
-
         const passedId=this.props.match.params.id
         const questions = this.props.questions
         const avatar = this.props.users[questions[passedId].author].avatarURL
         const name = this.props.users[questions[passedId].author].name
         const question = questions[passedId]
         if(question.optionOne.votes.includes(this.props.authedUser) || question.optionTwo.votes.includes(this.props.authedUser)){
-            return <PullResult question={questions[passedId]} name={name} avatar={avatar}/>
+            let selected =''
+            if(question.optionOne.votes.includes(this.props.authedUser)){
+                selected="optionOne"
+            }else{
+                selected="optionTwo"
+            }
+            return <PullResult question={questions[passedId]} selected={selected} name={name} avatar={avatar}/>
         }else{
             return <PullQuestion question={questions[passedId]} name={name} avatar={avatar}/>
         }
@@ -31,7 +35,7 @@ class QuestionPage extends React.Component {
         const questions = this.props.questions
         const avatar = this.props.users[questions[passedId].author].avatarURL
         const name = this.props.users[questions[passedId].author].name
-        console.log("questionPage",this.props)
+
 
         return (
         <div >

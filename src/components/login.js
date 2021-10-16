@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { setAuthedUser } from '../actions/authedUser'
 import { connect } from 'react-redux';
-// import { SET_AUTHED_USER } from './../actions/authedUser';
-import users from './../reducers/users';
 import { Redirect } from 'react-router-dom';
 
 
@@ -29,7 +27,6 @@ class Login extends React.Component {
     }
 
     render() { 
-        console.log("value",this.state.value)
         if(this.state.toHome===true){
             return <Redirect to='/'/>
         }

@@ -16,11 +16,11 @@ class PullResult extends React.Component {
                         <h3>Results:</h3>
                         <div className="optionBox">
                             <p>Would you rather {this.props.question.optionOne.text}</p>
-                            
                             <div className="progress">                            
                                 <div className="progress-bar" role="progressbar" style={{width: `${optionOneScore}%`}} aria-valuenow={optionOneScore} aria-valuemin="0" aria-valuemax="100">{optionOneScore}%</div>
                             </div>
                             <p>{optionOneLength} vote(s) / {(optionOneLength+optionTwoLength)}vote(s)</p>
+                            {this.props.selected === "optionOne"? <p id="yourVote">your vote</p>:""}
                         </div>
                         <div className="optionBox">
                             <p>Would you rather {this.props.question.optionTwo.text} ({optionOneLength}/{(optionOneLength+optionTwoLength)})</p>
@@ -28,6 +28,7 @@ class PullResult extends React.Component {
                                 <div className="progress-bar" role="progressbar" style={{width: `${optionTwoScore}%`}} aria-valuenow={optionTwoScore} aria-valuemin="0" aria-valuemax="100">{optionTwoScore}%</div>
                             </div>
                             <p>{optionTwoLength} vote(s) / {(optionOneLength+optionTwoLength)}vote(s)</p>
+                            {this.props.selected === "optionTwo"? <p id="yourVote">your vote</p>:""}
                         </div>
                     </div>
                 </div>

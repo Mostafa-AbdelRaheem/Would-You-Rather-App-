@@ -1,13 +1,10 @@
 import React, { Component,Fragment } from 'react';
 import {connect} from 'react-redux'
 import { handleInitialData } from '../actions/shared';
-
-import { BrowserRouter,Route,Redirect,Switch } from 'react-router-dom';
+import {Route,Switch } from 'react-router-dom';
 import LeaderBoard from './leaderBoard';
-import NavBar from './navBar'
 import Home from './home';
 import NewQuestion from './newQuestion';
-import QuestionStatus from './questionStatus';
 import QuestionPage from './questionPage';
 import Login from './login';
 
@@ -30,10 +27,8 @@ componentDidMount(){
                     <Route path='/leaderboard' component ={LeaderBoard}/>
                     <Route path='/add' component ={NewQuestion}/>
                     <Route path='/questions/:id' component ={QuestionPage}/>
-                    {/* <Route path='/not-found' component ={NotFound}/> */}
                     <Route path='/logout'  component ={Login}/>
                     <Route path='/'  component ={Home}/>
-                    {/* <Redirect to="/not-found"/> */}
                     </Switch>
             }
                   
