@@ -40,7 +40,11 @@ code {
     width: 920px;
   }
 }
-
+.navContainer {
+  display: flex;
+  justify-content: space-between;
+  /* align-content: center; */
+}
 .navbar {
   display: flex;
   align-items: center;
@@ -59,9 +63,37 @@ code {
   margin: 10px;
   text-decoration: none;
 }
-.navbar ul .active {
-  /* background-color: var(--main-color); */
+.navContainer .user {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
 }
+.navContainer .user p {
+  color: var(--main-color);
+  padding: 5px;
+}
+.navContainer .user button {
+  display: block;
+  border-radius: 5px;
+  font-weight: bold;
+  background-color: var(--main-color);
+  border-color: white;
+  color: white;
+}
+.navAvatarBox {
+  width: 35px;
+  height: 35px;
+  display: flex;
+}
+
+.navAvatarBox img {
+  margin: auto;
+  width: 35px;
+  height: 35px;
+  background-size: cover; /*this property does the magic*/
+  border-radius: 50%;
+}
+
 /* Start Home page */
 
 .mainContainer {

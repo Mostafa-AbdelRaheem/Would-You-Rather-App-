@@ -29,7 +29,7 @@ componentDidMount(){
                     <Switch>
                     <Route path='/leaderboard' component ={LeaderBoard}/>
                     <Route path='/add' component ={NewQuestion}/>
-                    <Route path='/question/:id' component ={QuestionPage}/>
+                    <Route path='/questions/:id' component ={QuestionPage}/>
                     {/* <Route path='/not-found' component ={NotFound}/> */}
                     <Route path='/logout'  component ={Login}/>
                     <Route path='/'  component ={Home}/>

@@ -7,7 +7,7 @@ import { withRouter } from 'react-router';
 class Question extends React.Component {
     toParent=(e,id)=>{
         e.preventDefault()
-        this.props.history.push(`/question/${id}`)
+        this.props.history.push(`/questions/${id}`)
     }
 
     render() { 
