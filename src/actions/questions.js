@@ -26,7 +26,6 @@ export function handleAddQuestionAnswer(info){
         return saveQuestionAnswer(
             info
         )
-    //i have swipped then with catch
         .then((info)=>{
             console.log("handle info",info)
 

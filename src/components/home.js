@@ -10,9 +10,10 @@ class Home extends React.Component {
     
     render() {
         return <div className="homeContainer">
+            {/* {this.handlelogin()} */}
             <NavBar/>
-            <h2 className='text-center'>Questions</h2>
-            <QuestionContainer />
+                    <h2 className='text-center'>Questions</h2>
+                    <QuestionContainer />
         </div>;
     }
 }

@@ -8,6 +8,8 @@ import PullResult from './PullResult';
 class QuestionPage extends React.Component {
 
     handleAnsweredQuestion=()=>{
+
+
         const passedId=this.props.match.params.id
         const questions = this.props.questions
         const avatar = this.props.users[questions[passedId].author].avatarURL
@@ -20,6 +22,9 @@ class QuestionPage extends React.Component {
         }
         
     }
+
+
+
 
     render() { 
         const passedId=this.props.match.params.id

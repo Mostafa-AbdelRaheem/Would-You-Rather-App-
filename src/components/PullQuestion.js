@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { handleAddQuestionAnswer } from '../actions/questions';
-
+import { addAnswerToUser } from '../actions/users';
 
 class PullQuestion extends React.Component {
     state={
@@ -18,23 +18,18 @@ class PullQuestion extends React.Component {
         e.preventDefault()
         const {dispatch ,authedUser, question} =this.props
         const qid = question.id
+        const qauthor = this.props.questions[qid].author
         let answer=""
 
         if(this.state.value === this.props.question.optionOne.text){
             answer = "optionOne"
-            console.log("first conidtion called")
-            console.log("answer",answer)
             
         }else{
             answer = "optionTwo"
-            console.log("else conidtion called")
-            console.log("answer",answer)
+            
         }
-        console.log("button clicked")
-        // this.state.value === this.props.question.optionOne.text
-        // const{optionOneText,optionTwoText} =this.state
-        console.log("authedUser",authedUser)
         dispatch(handleAddQuestionAnswer({authedUser,qid,answer}))
+        dispatch(addAnswerToUser({authedUser, qid, answer,qauthor}))
 
         }
         // questions[qid][answer].votes
@@ -42,7 +37,7 @@ class PullQuestion extends React.Component {
     render() { 
         console.log("PULL props",this.props)
         const  qid =this.props.question.id
-        console.log("PULL props questions",this.props.questions[qid]["optionTwo"].votes)
+        console.log("PULL props questions",this.props.questions[qid].author)
         console.log("PULL state",this.state.value)
         console.log("optionOne",this.props.question.optionOne.text)
         console.log("optionTwo",this.props.question.optionTwo.text)

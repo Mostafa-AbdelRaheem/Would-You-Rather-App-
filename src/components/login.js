@@ -29,6 +29,7 @@ class Login extends React.Component {
     }
 
     render() { 
+        console.log("value",this.state.value)
         if(this.state.toHome===true){
             return <Redirect to='/'/>
         }
@@ -39,11 +40,11 @@ class Login extends React.Component {
                     <h3>LogIn</h3>
                     <p>Please Select User</p>
                     <form id="myForm" onSubmit={this.handleSubmit} >
-                        <select id="mySelect"  onChange={this.handlelogin}>
+                        <select id="mySelect" onChange={this.handlelogin}>
                                 <option >Select user Please..</option>
                                 {usersId.map(id=><option value={id} key={id}>{id}</option>)}
                         </select>
-                        <button className="loginBtn">Longin</button> 
+                        <button className="loginBtn" disabled={this.state.value===""?true:null}>Longin</button> 
                     </form>
                 </div>
             </div>
