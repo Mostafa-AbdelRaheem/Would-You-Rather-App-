@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import NavBar from './navBar';
 import { connect } from 'react-redux';
-import { handleAddQuestion } from '../actions/questions';
+import { handleAddQuestion } from '../actions/shared';
 import authedUser from './../reducers/authedUser';
 import { Redirect } from 'react-router-dom';
 

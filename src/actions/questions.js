@@ -1,4 +1,4 @@
-import { saveQuestion,saveQuestionAnswer } from "../utils/api"
+import { saveQuestionAnswer } from "../utils/api"
 import authedUser from './../reducers/authedUser';
 
 
@@ -38,9 +38,7 @@ export function handleAddQuestionAnswer(info){
 
 
 
-
-
-function addQuestion(question){
+export function addQuestion(question){
     return{
         type:ADD_QUESTION,
         question
@@ -48,18 +46,6 @@ function addQuestion(question){
 }
 
 
-export function handleAddQuestion(question){
-    return (dispatch,getstate)=>{
-
-        console.log("handleQuestion",question)
-
-        return saveQuestion(
-            question
-        )
-        .then((question)=>dispatch(addQuestion(question)))
-
-    }
-}
 
 export function receivedQuestions(questions){
     return{
