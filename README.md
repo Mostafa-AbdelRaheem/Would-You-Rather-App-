@@ -22,6 +22,15 @@ This a Udacity Front End Advanced Track Nanodegree would you Rather Project
 ## App
 In this app you can play would you Rather Game by choosing one of three users
 
+
+The command for installing the dependencies:
+	- npm install or yarn install.
+	- yarn add react-router-dom
+	- yarn add react-redux redux
+	- yarn add redux-thunk
+
+Command for launching the project - npm start or yarn start.
+
 you can:
 1-create a question
 2-answer the questions of the other users

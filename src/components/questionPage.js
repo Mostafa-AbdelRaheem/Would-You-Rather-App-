@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import NavBar from './navBar';
 import PullQuestion from './PullQuestion';
 import PullResult from './PullResult';
+import { Redirect } from 'react-router-dom';
 
 
 class QuestionPage extends React.Component {
@@ -13,17 +14,22 @@ class QuestionPage extends React.Component {
         const avatar = this.props.users[questions[passedId].author].avatarURL
         const name = this.props.users[questions[passedId].author].name
         const question = questions[passedId]
-        if(question.optionOne.votes.includes(this.props.authedUser) || question.optionTwo.votes.includes(this.props.authedUser)){
-            let selected =''
-            if(question.optionOne.votes.includes(this.props.authedUser)){
-                selected="optionOne"
-            }else{
-                selected="optionTwo"
-            }
-            return <PullResult question={questions[passedId]} selected={selected} name={name} avatar={avatar}/>
+        if(!question){
+            return  <Redirect to='/not-found'/>
         }else{
-            return <PullQuestion question={questions[passedId]} name={name} avatar={avatar}/>
+            if(question.optionOne.votes.includes(this.props.authedUser) || question.optionTwo.votes.includes(this.props.authedUser)){
+                let selected =''
+                if(question.optionOne.votes.includes(this.props.authedUser)){
+                    selected="optionOne"
+                }else{
+                    selected="optionTwo"
+                }
+                return <PullResult question={questions[passedId]} selected={selected} name={name} avatar={avatar}/>
+            }else{
+                return <PullQuestion question={questions[passedId]} name={name} avatar={avatar}/>
+            }
         }
+
         
     }
 

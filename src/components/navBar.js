@@ -22,7 +22,7 @@ class NavBar extends React.Component {
 
     render() { 
         if(this.state.tologin===true){
-            return <Redirect to='//logout'/>
+            return <Redirect to='/logout'/>
         }
 
         return (
