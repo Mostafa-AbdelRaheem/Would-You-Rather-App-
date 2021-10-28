@@ -1,37 +1,36 @@
-This a Udacity Front End Advanced Track Nanodegree would you Rather Project
+#Udacity Project:would you Rather App
 
+This App about Would your rather Game where you can 
+    1-create a question
+    2-answer the questions of the other users
+    3-check your position on leader Board
 
-├── README.md - This file.
-├── yarn.lock
-├── package.json 
-├── public
-│   ├── favicon.ico 
-│   └── index.html 
-└── src
-    ├── actions #file contains all the actions
-    ├── components #file contains all the component of the project
-    ├── middleware #file contains all the middleware functions
-    ├── reducers #file contains all reducers
-    ├── utils
-    │   ├── _DATA.js
-    │   ├── api.js
-    │   └── helper.js
-    ├── index.css # Global styles. You probably won't need to change anything here.
-    └── index.js # You should not need to modify this file. It is used for DOM rendering only.
+There are three acccounts which you can choose one of them
+
+#Build Tools
+* React
+* Redux
+* React Router
+* React-Bootstrap
+
+# Installation
+
+### Step 1: Make sure Node and npm are installed from the terminal.
+
 ```
-## App
-In this app you can play would you Rather Game by choosing one of three users
+node -v
+npm -v
+```
+### Step 2 : npm install
 
+in order to get all the dependencies we need to install npm
 
-The command for installing the dependencies:
-	- npm install or yarn install.
-	- yarn add react-router-dom
-	- yarn add react-redux redux
-	- yarn add redux-thunk
+```
+npm install
+```
 
-Command for launching the project - npm start or yarn start.
+### Step 3: Start the Project
 
-you can:
-1-create a question
-2-answer the questions of the other users
-3-check your position on leader Board
+```
+npm start or yarn start
+```

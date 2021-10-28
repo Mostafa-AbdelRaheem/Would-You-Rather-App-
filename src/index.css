@@ -328,6 +328,23 @@ code {
   margin: 10px;
 }
 
+.newQuestionBtn {
+  width: 80%;
+  margin: 10px auto 30px auto;
+  display: block;
+  border-radius: 5px;
+  margin-top: 15px;
+  font-weight: bold;
+  background-color: white;
+  border-color: var(--main-color);
+  color: var(--main-color);
+}
+
+.newQuestionBtn:hover {
+  background-color: var(--main-color);
+  color: white;
+}
+
 /* End newQuestionContainer */
 
 /* Start Pull Page */
