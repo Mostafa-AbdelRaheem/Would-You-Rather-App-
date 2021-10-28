@@ -34,5 +34,5 @@ npm install
 ### Step 3: Start the Project
 
 ```
-npm start or yarn start
+npm start
 ```
