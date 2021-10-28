@@ -1,17 +1,18 @@
-#Udacity Project:would you Rather App
+# Udacity Project: Would you Rather App
 
-This App about Would your rather Game where you can 
-    1-create a question
-    2-answer the questions of the other users
-    3-check your position on leader Board
+This App about Would your rather Game where you can
+1-create a question
+2-answer the questions of the other users
+3-check your position on leader Board
 
 There are three acccounts which you can choose one of them
 
 #Build Tools
-* React
-* Redux
-* React Router
-* React-Bootstrap
+
+- React
+- Redux
+- React Router
+- React-Bootstrap
 
 # Installation
 
@@ -21,6 +22,7 @@ There are three acccounts which you can choose one of them
 node -v
 npm -v
 ```
+
 ### Step 2 : npm install
 
 in order to get all the dependencies we need to install npm
