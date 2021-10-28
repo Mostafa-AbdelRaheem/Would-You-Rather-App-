@@ -14,12 +14,13 @@ There are three acccounts which you can choose one of them
 - React Router
 - React-Bootstrap
 
+* CSS
+
 # Installation
 
-### Step 1: Make sure Node and npm are installed from the terminal.
+### Step 1: Make sure npm is installed from the terminal.
 
 ```
-node -v
 npm -v
 ```
 
